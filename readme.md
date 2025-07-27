@@ -14,9 +14,6 @@ The purpose of the template is to show:
 
 Using the principles of Robert Martin (aka Uncle Bob).
 
-[Go-clean-template](https://evrone.com/go-clean-template?utm_source=github&utm_campaign=go-clean-template) is created &
-supported by [Evrone](https://evrone.com/?utm_source=github&utm_campaign=go-clean-template).
-
 This template implements three types of servers:
 
 - AMQP RPC (based on RabbitMQ as [transport](https://github.com/rabbitmq/amqp091-go))
@@ -394,10 +391,6 @@ In addition to Clean architecture, _Onion architecture_ and _Hexagonal_ (_Ports 
 Both are based on the principle of Dependency Inversion.
 _Ports and adapters_ are very close to _Clean Architecture_, the differences are mainly in terminology.
 
-## Similar projects
-
-- [https://github.com/bxcodec/go-clean-arch](https://github.com/bxcodec/go-clean-arch)
-- [https://github.com/zhashkevych/courses-backend](https://github.com/zhashkevych/courses-backend)
 
 ## Useful links
 
