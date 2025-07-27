@@ -1,7 +1,7 @@
 package v1
 
 import (
-	"github.com/evrone/go-clean-template/internal/controller/http/v1/response"
+	"github.com/ranggakrisna/go-clean-arch/internal/controller/http/v1/response"
 	"github.com/gofiber/fiber/v2"
 )
 
