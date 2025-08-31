@@ -13,6 +13,7 @@ import (
 	"github.com/ranggakrisna/go-clean-arch/internal/controller/http"
 	"github.com/ranggakrisna/go-clean-arch/internal/repo/persistent"
 	"github.com/ranggakrisna/go-clean-arch/internal/repo/webapi"
+	"github.com/ranggakrisna/go-clean-arch/internal/usecase/auth"
 	"github.com/ranggakrisna/go-clean-arch/internal/usecase/translation"
 	"github.com/ranggakrisna/go-clean-arch/pkg/grpcserver"
 	"github.com/ranggakrisna/go-clean-arch/pkg/httpserver"
@@ -37,6 +38,9 @@ func Run(cfg *config.Config) {
 		persistent.New(pg),
 		webapi.New(),
 	)
+	authUseCase := auth.NewUseCase(
+		persistent.NewAuthRepository(pg),
+	)
 
 	// RabbitMQ RPC Server
 	rmqRouter := amqprpc.NewRouter(translationUseCase, l)
@@ -52,7 +56,7 @@ func Run(cfg *config.Config) {
 
 	// HTTP Server
 	httpServer := httpserver.New(httpserver.Port(cfg.HTTP.Port), httpserver.Prefork(cfg.HTTP.UsePreforkMode))
-	http.NewRouter(httpServer.App, cfg, translationUseCase, l)
+	http.NewRouter(httpServer.App, cfg, translationUseCase, authUseCase, l)
 
 	// Start servers
 	rmqServer.Start()

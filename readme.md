@@ -48,7 +48,7 @@ make compose-up-integration-test
 ### Full docker stack with reverse proxy
 
 ```sh
-make compose-up-all 
+make compose-up-all
 ```
 
 Check services:
@@ -79,9 +79,9 @@ Configuration and logger initialization. Then the main function "continues" in
 
 ### `config`
 
-The twelve-factor app stores config in environment variables (often shortened to `env vars` or `env`). Env vars are easy 
-to change between deploys without changing any code; unlike config files, there is little chance of them being checked 
-into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System 
+The twelve-factor app stores config in environment variables (often shortened to `env vars` or `env`). Env vars are easy
+to change between deploys without changing any code; unlike config files, there is little chance of them being checked
+into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System
 Properties, they are a language- and OS-agnostic standard.
 
 Config: [config.go](config/config.go)
@@ -163,7 +163,7 @@ routes := make(map[string]server.CallHandler)
 #### `internal/controller/grpc`
 
 Simple gRPC versioning.
-For v2, we will need to add the `grpc/v2` folder with the same content. 
+For v2, we will need to add the `grpc/v2` folder with the same content.
 Also add the `v2` folder to the proto files in `docs/proto`.
 And in the file `internal/controller/grpc/router.go` add the line:
 
@@ -390,7 +390,6 @@ However, you should add layers only if really necessary.
 In addition to Clean architecture, _Onion architecture_ and _Hexagonal_ (_Ports and adapters_) are similar to it.
 Both are based on the principle of Dependency Inversion.
 _Ports and adapters_ are very close to _Clean Architecture_, the differences are mainly in terminology.
-
 
 ## Useful links
 

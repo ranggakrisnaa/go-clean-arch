@@ -5,14 +5,14 @@ import (
 	"net/http"
 
 	"github.com/ansrivas/fiberprometheus/v2"
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/swagger"
 	"github.com/ranggakrisna/go-clean-arch/config"
 	_ "github.com/ranggakrisna/go-clean-arch/docs" // Swagger docs.
 	"github.com/ranggakrisna/go-clean-arch/internal/controller/http/middleware"
 	v1 "github.com/ranggakrisna/go-clean-arch/internal/controller/http/v1"
 	"github.com/ranggakrisna/go-clean-arch/internal/usecase"
 	"github.com/ranggakrisna/go-clean-arch/pkg/logger"
-	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/swagger"
 )
 
 // NewRouter -.
@@ -22,7 +22,7 @@ import (
 // @version     1.0
 // @host        localhost:8080
 // @BasePath    /v1
-func NewRouter(app *fiber.App, cfg *config.Config, t usecase.Translation, l logger.Interface) {
+func NewRouter(app *fiber.App, cfg *config.Config, t usecase.Translation, au usecase.Auth, l logger.Interface) {
 	// Options
 	app.Use(middleware.Logger(l))
 	app.Use(middleware.Recovery(l))
@@ -46,5 +46,6 @@ func NewRouter(app *fiber.App, cfg *config.Config, t usecase.Translation, l logg
 	apiV1Group := app.Group("/v1")
 	{
 		v1.NewTranslationRoutes(apiV1Group, t, l)
+		v1.NewAuthRoutes(apiV1Group, &au, l)
 	}
 }

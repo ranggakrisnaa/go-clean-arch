@@ -103,6 +103,14 @@ migrate-up: ### migration up
 	migrate -path migrations -database '$(PG_URL)?sslmode=disable' up
 .PHONY: migrate-up
 
+migrate-down: ### Rollback all migrations
+	migrate -path migrations -database '$(PG_URL)?sslmode=disable' down
+.PHONY: migrate-down
+
+migrate-down-1: ### Rollback one migration step
+	migrate -path migrations -database '$(PG_URL)?sslmode=disable' down 1
+.PHONY: migrate-down-1
+
 bin-deps: ### install tools
 	GOBIN=$(LOCAL_BIN) go install tool
 .PHONY: bin-deps
