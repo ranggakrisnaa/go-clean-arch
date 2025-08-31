@@ -19,6 +19,8 @@ require (
 	github.com/Masterminds/squirrel v1.5.4
 	github.com/ansrivas/fiberprometheus/v2 v2.10.0
 	github.com/caarlos0/env/v11 v11.3.1
+	github.com/getsentry/sentry-go v0.35.1
+	github.com/getsentry/sentry-go/fiber v0.35.1
 	github.com/go-playground/validator/v10 v10.26.0
 	github.com/goccy/go-json v0.10.5
 	github.com/gofiber/fiber/v2 v2.52.9
@@ -30,14 +32,14 @@ require (
 	github.com/rs/zerolog v1.34.0
 	github.com/stretchr/testify v1.10.0
 	github.com/swaggo/swag v1.16.4
-	go.uber.org/mock v0.5.2
+	go.uber.org/mock v0.6.0
 	google.golang.org/grpc v1.72.1
 	google.golang.org/protobuf v1.36.6
 )
 
 require (
-	github.com/getsentry/sentry-go v0.35.1 // indirect
-	github.com/getsentry/sentry-go/fiber v0.35.1 // indirect
+	golang.org/x/tools/go/expect v0.1.1-deprecated // indirect
+	golang.org/x/tools/go/packages/packagestest v0.1.1-deprecated // indirect
 )
 
 require (
@@ -369,18 +371,18 @@ require (
 	go.uber.org/automaxprocs v1.6.0 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
 	go.uber.org/zap v1.24.0 // indirect
-	golang.org/x/crypto v0.41.0 // indirect
+	golang.org/x/crypto v0.41.0
 	golang.org/x/exp/typeparams v0.0.0-20250210185358-939b2ce775ac // indirect
-	golang.org/x/mod v0.26.0 // indirect
-	golang.org/x/net v0.42.0 // indirect
+	golang.org/x/mod v0.27.0 // indirect
+	golang.org/x/net v0.43.0 // indirect
 	golang.org/x/oauth2 v0.30.0 // indirect
 	golang.org/x/sync v0.16.0 // indirect
 	golang.org/x/sys v0.35.0 // indirect
-	golang.org/x/telemetry v0.0.0-20250710130107-8d8967aff50b // indirect
+	golang.org/x/telemetry v0.0.0-20250807160809-1a19826ec488 // indirect
 	golang.org/x/term v0.34.0 // indirect
 	golang.org/x/text v0.28.0 // indirect
 	golang.org/x/time v0.11.0 // indirect
-	golang.org/x/tools v0.35.0 // indirect
+	golang.org/x/tools v0.36.0 // indirect
 	golang.org/x/vuln v1.1.4 // indirect
 	golang.org/x/xerrors v0.0.0-20240716161551-93cc26a95ae9 // indirect
 	google.golang.org/api v0.228.0 // indirect
